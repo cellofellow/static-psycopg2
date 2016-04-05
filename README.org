@@ -1,0 +1,23 @@
+* Script to compile statically-linked psycopg2
+
+This is especially usefull for AWS Lambda.
+
+** Usage
+
+For Python 2 you can compile using Docker like so.
+#+BEGIN_SRC shell
+docker run --rm python2.7 bash < script.sh > psycopg2.tar.gz
+#+END_SRC
+
+Python 3 is similar.
+#+BEGIN_SRC shell
+docker run --rm python:3.5 < script > psycopg2.tar.gz
+#+END_SRC
+
+
+You may also use the ~-e PGVERSION=9.5.2~ or any other version,
+similarly with the ~PSYCOVERSION~ variable.
+
+Both commands output to stdout a gzip tarball containing the compiled
+psycopg2 Python module. Simply unzip the module into your ~PYTHONPATH~
+(the root of the project works for Lambda) and enjoy.
