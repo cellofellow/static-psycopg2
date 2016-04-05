@@ -16,7 +16,7 @@ docker run --rm -i python:3.5 bash < script.sh > psycopg2.tar.gz
 
 You don't even have to clone the project:
 #+BEGIN_SRC sh
-curl https://dev.izeni.net/jgardner/static-psycopg2/raw/master/script.sh | docker run --rm -i python:2.7 bash | tar zx
+curl https://raw.githubusercontent.com/cellofellow/static-psycopg2/master/script.sh | docker run --rm -i python:2.7 bash | tar zx
 #+END_SRC
 
 
