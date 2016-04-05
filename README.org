@@ -5,13 +5,18 @@ This is especially usefull for AWS Lambda.
 ** Usage
 
 For Python 2 you can compile using Docker like so.
-#+BEGIN_SRC shell
-docker run --rm python2.7 bash < script.sh > psycopg2.tar.gz
+#+BEGIN_SRC sh
+docker run --rm -i python2.7 bash < script.sh > psycopg2.tar.gz
 #+END_SRC
 
 Python 3 is similar.
-#+BEGIN_SRC shell
-docker run --rm python:3.5 < script > psycopg2.tar.gz
+#+BEGIN_SRC sh
+docker run --rm -i python:3.5 bash < script.sh > psycopg2.tar.gz
+#+END_SRC
+
+You don't even have to clone the project:
+#+BEGIN_SRC sh
+curl https://dev.izeni.net/jgardner/static-psycopg2/raw/master/script.sh | docker run --rm -i python:2.7 bash | tar zx
 #+END_SRC
 
 
